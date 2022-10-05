@@ -1,0 +1,52 @@
+
+.header_container{
+    
+    width: 100%;
+    height: 5rem;
+}
+
+.header_search {
+    display: flex;
+    margin : 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.header_search > input {
+    width: 30rem;
+    height: 2.5rem;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.header_search > button {
+    width: 4rem;
+    height: 2.5rem;
+    padding : 2 ;
+    
+}
+
+.contents_btn{
+    display: flex;
+    margin : 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5rem;
+}
+
+.contents_btn > button{
+    height: 2rem;
+    padding :0.5rem 1rem 0.5rem 1rem;
+    text-align: center;
+    margin: 0.5rem;
+    border-radius: 1rem;
+    border : 1px solid rgb(228, 228, 228);
+    background-color: rgb(232, 232, 232);
+}
+
+.container{
+    display: flex;s
+}
