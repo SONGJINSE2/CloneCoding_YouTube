@@ -1,0 +1,30 @@
+.Nav {
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .Nav::before {
+    content: '';
+    min-width: 286px;
+  }
+  
+  .Nav::after {
+    content: '';
+    min-width: 284px;
+  }
+  
+  .Nav a{
+    position: absolute;
+    height: auto;
+    height: 40%;
+    left : 30px;
+    top : 50%;
+    transform: translateY(-50%);
+  }
+  
+  .header-logo{
+    height: 100%;
+  }

@@ -1,0 +1,15 @@
+.video-list {
+  margin : 30px 0;
+}
+
+.video-list figure{
+  display: flex;
+  align-items: center;
+}
+
+.video-list figcaption{
+  width: 800px;
+  height: 300px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
