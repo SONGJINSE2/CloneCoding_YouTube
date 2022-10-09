@@ -1,9 +1,20 @@
-.video-player-wrap{
-    margin : 0 auto;
-    text-align: center;
+.video-player-wrap {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.video-player{
-    width: 960px;
-    height: 640px;
+.video-player-wrap2 {
+  flex: auto;
+}
+
+.video-player-wrap3 {
+  flex: auto;
+}
+.video-player {
+  width: 100%;
+  height: 30vw;
+  padding: 24px 0px 0px 50px;
+  margin: 24px 0px 0px 50px;
+  box-sizing: border-box;
 }
