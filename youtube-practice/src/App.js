@@ -13,7 +13,7 @@ import VideoListItems from "./VideoList/VideoListItems";
 
 class App extends React.Component {
   constructor(props) {
-    // ** 클래스형 컴포넌트를 사용하기 위해서는 constructor-> super를 작성해줘야한다.
+    // ** 클래스형 컴포넌트를 사용하기 위해서는 constructor(props)-> super(props)를 작성해줘야한다.
     super(props);
     // ** state를 사용하기 위해서는 import React, { Component } from 'react'를 불러와야 하는것 아닌지?
     this.state = {
@@ -96,6 +96,23 @@ class App extends React.Component {
         <Nav>
           <SearchBar onSearchVideo={debounce(this.getYoutube, 500)}></SearchBar>
         </Nav>
+        <hr></hr>
+        <section className="content-button">
+          <div>
+            <button>전체</button>
+            <button>음악</button>
+            <button>믹스</button>
+            <button>게임</button>
+            <button>실시간</button>
+            <button>축구</button>
+            <button>액션 어드벤쳐 게임</button>
+            <button>최근에 업로드된 동영상</button>
+            <button>새로운 맞춤 동영상</button>
+            <button>뉴스</button>
+            <button>연예인</button>
+          </div>
+        </section>
+        <hr></hr>
         <main>
           <div className="c3">
             {

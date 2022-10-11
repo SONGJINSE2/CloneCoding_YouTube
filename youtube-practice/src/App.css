@@ -1,24 +1,50 @@
-.main-content{
+.main-content {
   width: 1600px;
   margin: 25px auto;
 }
 
-.c1{
+.c1 {
   width: 100%;
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.c2{
+.c2 {
   width: 320px;
   height: 280px;
   padding: 20px;
-  margin : 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
-.c2 .c5{
+.c2 .c5 {
   width: 320px;
   height: 180px;
+}
+
+.content-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.content-button button {
+  display: inline-block;
+  margin: 5px;
+  border: solid 1px gainsboro;
+  border-radius: 12px;
+  padding: 3px 10px 3px 10px;
+  cursor: pointer;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: gainsboro;
+  padding: 0;
+  margin: 0;
 }

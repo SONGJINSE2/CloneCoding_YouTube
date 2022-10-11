@@ -1,35 +1,51 @@
 .search-wrapper {
-    padding: 32px 0;
-    white-space: nowrap;
-  }
-  
-  .search-bar{
-    width: 450px;
-    height: 36px;
-    padding: 0 auto;
-    border: 1px solid #828282;
-    vertical-align: middle;
-    display: inline-block;
-    border-radius: 3px 0px 0px 3px;
-    line-height: 1.5;
-    font-size: 15px;
-    outline: none;
-    padding-left: 15px;
-    text-decoration: none;
-  }
-  
-  .btn-search{
-    height: 36px;
-    border-radius: 0px 3px 3px 0px;
-    border: 1px solid #828282;
-    background: #fff;
-    margin-left: -2px;
-    font-size: 0;
-    vertical-align: middle;
-    display: inline-block;
-  }
-  
-  .search-icon{
-    width: 20px;
-    height: 20px;
-  }
+  padding: 32px 0;
+  white-space: nowrap;
+}
+
+.search-bar {
+  width: 450px;
+  height: 36px;
+  padding: 0 auto;
+  border: 1px solid gainsboro;
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 3px 0px 0px 3px;
+  line-height: 1.5;
+  font-size: 15px;
+  outline: none;
+  padding-left: 15px;
+  text-decoration: none;
+}
+
+.btn-search {
+  height: 36px;
+  border-radius: 0px 3px 3px 0px;
+  border: 1px solid gainsboro;
+  background: #fff;
+  margin-left: -2px;
+  font-size: 0;
+  vertical-align: middle;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.microphone {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-mic {
+  width: 34px;
+  height: 36px;
+  border: none;
+  background-color: #fff;
+  vertical-align: middle;
+  margin-left: 2px;
+  cursor: pointer;
+}

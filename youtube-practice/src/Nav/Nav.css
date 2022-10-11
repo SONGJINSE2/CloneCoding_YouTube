@@ -1,30 +1,53 @@
 .Nav {
-    background-color: rgb(255, 255, 255);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .Nav::before {
-    content: '';
-    min-width: 286px;
-  }
-  
-  .Nav::after {
-    content: '';
-    min-width: 284px;
-  }
-  
-  .Nav a{
-    position: absolute;
-    height: auto;
-    height: 40%;
-    left : 30px;
-    top : 50%;
-    transform: translateY(-50%);
-  }
-  
-  .header-logo{
-    height: 100%;
-  }
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3em;
+}
+
+.Nav::before {
+  content: "";
+  min-width: 286px;
+}
+
+.Nav::after {
+  content: "";
+  min-width: 284px;
+}
+
+.Nav a {
+  position: absolute;
+  height: auto;
+  height: 40%;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header-logo {
+  height: 100%;
+}
+
+.user-icon1 {
+  display: flex;
+  position: absolute;
+  right: 20px;
+  border-radius: 20px;
+  border: solid 1px gainsboro;
+  padding: 7px 7px 7px 7px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.user-icon2 {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.user-icon1 div {
+  margin: 0px 3px 0px 3px;
+  color: cornflowerblue;
+}
