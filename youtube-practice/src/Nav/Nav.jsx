@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, useLocation} from 'react-router-dom';
+import { Link, useLocation } from "react-router-dom";
 import "./Nav.css";
 import YoutubeLogo from "./images/YouTube.png";
 import userIcon from "./images/person.png";
@@ -11,7 +11,7 @@ const Nav = (props) => {
   return (
     <header className="Nav">
       <h1 className="a11y-hidden"> 유튜브 </h1>
-      <Link to="/">
+      <a href="/">
         <img
           className="header-logo"
           src={YoutubeLogo}
@@ -20,7 +20,7 @@ const Nav = (props) => {
           //   window.location.reload(false);
           // }}
         />
-      </Link>
+      </a>
 
       {props.children}
       <button className="user-icon1">
