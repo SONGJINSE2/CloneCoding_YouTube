@@ -1,4 +1,5 @@
 import React from "react";
+import {Link, useLocation} from 'react-router-dom';
 import "./Nav.css";
 import YoutubeLogo from "./images/YouTube.png";
 import userIcon from "./images/person.png";
@@ -10,16 +11,16 @@ const Nav = (props) => {
   return (
     <header className="Nav">
       <h1 className="a11y-hidden"> 유튜브 </h1>
-      <a>
+      <Link to="/">
         <img
           className="header-logo"
           src={YoutubeLogo}
           alt="유튜브"
-          onClick={() => {
-            window.location.reload(false);
-          }}
+          // onClick={() => {
+          //   window.location.reload(false);
+          // }}
         />
-      </a>
+      </Link>
 
       {props.children}
       <button className="user-icon1">
