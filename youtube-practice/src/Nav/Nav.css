@@ -24,6 +24,7 @@
   left: 30px;
   top: 50%;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .header-logo {

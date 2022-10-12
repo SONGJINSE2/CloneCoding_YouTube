@@ -8,8 +8,7 @@ const ReactRouter = () => {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App.js />}></Route>
-          <Route path="/student/:name" element={<VideoPlayer />}></Route>
+          <Route path="/" element={<App />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

@@ -2,11 +2,8 @@ import React from "react";
 import "./Nav.css";
 import YoutubeLogo from "./images/YouTube.png";
 import userIcon from "./images/person.png";
-// import { useNavigate } from "react-router-dom";
 
-const Nav = (props) => {
-  // const navigate = useNavigate();
-
+const Category = (props) => {
   return (
     <header className="Nav">
       <h1 className="a11y-hidden"> 유튜브 </h1>
@@ -30,6 +27,4 @@ const Nav = (props) => {
   );
 };
 
-export default Nav;
-
-//onClick={()=>navigate(-1)
+export default Category;

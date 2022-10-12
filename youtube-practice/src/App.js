@@ -43,7 +43,7 @@ class App extends React.Component {
 
     try {
       const { data } = await axios.get(URL, { params });
-      // 프라미스가 거부되면 에러가 던져지는데 try 함수로 잡을 수 있다..
+      // ** 프라미스가 거부되면 에러가 던져지는데 try 함수로 잡을 수 있다..
       // ** axios.get(url{,config}]) 서버에서 데이터를 가져올 때 사용하는 메서드
       // ** 두 번째 파라미터 ,config 객체에는 헤더(header), 응답초과시간(timeout), 인자 값(params)등의 요청 값을 같이 넘길 수 있다.
       // ** { data } 라는 객체 안에 axios.get(URL, { params } 값을 할당 -> 왜 data라고 안하고 { }를 넣는지?
@@ -96,6 +96,7 @@ class App extends React.Component {
         <Nav>
           <SearchBar onSearchVideo={debounce(this.getYoutube, 500)}></SearchBar>
         </Nav>
+
         <hr></hr>
         <section className="content-button">
           <div>
