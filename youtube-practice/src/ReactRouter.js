@@ -5,6 +5,7 @@ import Nav from "./Nav/Nav";
 import SearchBar from "./SearchBar/SearchBar";
 import { debounce } from "loadsh";
 import { useState } from "react";
+import Category from "./Category/Category";
 
 const ReactRouter = () => {
   const [query, setQuery] = useState("");
@@ -18,6 +19,8 @@ const ReactRouter = () => {
         <Nav>
           <SearchBar onSearchVideo={debounce(changeQuery, 500)}></SearchBar>
         </Nav>
+        <hr></hr>
+        <Category></Category>
         <Routes>
           <Route path="/" element={<Main query={query} />}></Route>
           <Route path="/detail" element={<VideoPlayer />}></Route>

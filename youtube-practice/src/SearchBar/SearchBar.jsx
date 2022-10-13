@@ -17,7 +17,7 @@ const SearchBar = (props) => {
         ref={(ref) => (input = ref)} // 2-1번
         className="search-bar"
         type="search"
-        placeholder="검색어를 입력하세요"
+        placeholder="검색"
         autoFocus
         onKeyPress={keyHandler(props.onSearchVideo)} // 1번
       />

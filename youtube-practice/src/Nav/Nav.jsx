@@ -1,8 +1,8 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
 import "./Nav.css";
 import YoutubeLogo from "./images/YouTube.png";
 import userIcon from "./images/person.png";
+import menuicon from "./images/menuicon.png";
 // import { useNavigate } from "react-router-dom";
 
 const Nav = (props) => {
@@ -10,8 +10,10 @@ const Nav = (props) => {
 
   return (
     <header className="Nav">
-      <h1 className="a11y-hidden"> 유튜브 </h1>
-      <a href="/">
+      <a className="header-box" href="/">
+        <button className="side-menu">
+          <img className="menuicon" src={menuicon}></img>
+        </button>
         <img
           className="header-logo"
           src={YoutubeLogo}

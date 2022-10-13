@@ -7,6 +7,7 @@ const VideoListItems = (props) => {
   const navigate = useNavigate();
 
   const videos = props.videoDatas.map((video) => {
+    console.log("바보", video);
     return (
       <li
         className="c2"
@@ -16,11 +17,17 @@ const VideoListItems = (props) => {
       >
         <figure>
           <img
-            className="c5"
+            className="thumbnailImg"
             src={video.snippet.thumbnails.high.url}
             alt="영상이미지"
           />
-          <figcaption>{video.snippet.title},</figcaption>
+          <div className="Video-list-text-box">
+            <img
+              className="channelImg"
+              src={video.snippet.channelThumb.high.url}
+            />
+            <figcaption>{video.snippet.title},</figcaption>
+          </div>
         </figure>
       </li>
     );

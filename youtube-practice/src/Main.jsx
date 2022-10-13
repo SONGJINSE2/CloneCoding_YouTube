@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import "./Main.css";
 import axios from "axios";
 import Nav from "./Nav/Nav";
 import SearchBar from "./SearchBar/SearchBar";
@@ -10,7 +11,8 @@ import spinner from "./spinner.gif";
 import { v4 } from "uuid";
 import { debounce } from "loadsh";
 import VideoListItems from "./VideoList/VideoListItems";
-
+import home from "./Nav/images/home.png";
+import search from "./Nav/images/search.png";
 class Main extends React.Component {
   constructor(props) {
     // ** 클래스형 컴포넌트를 사용하기 위해서는 constructor(props)-> super(props)를 작성해줘야한다.
@@ -34,7 +36,7 @@ class Main extends React.Component {
 
     const params = {
       //** params이라는 객체 안에 key,q,pageToken,part라는 키:값을 할당
-      key: "AIzaSyCd3ZIu6NcAHyXeHb6TtYZUpGQFysuo71A",
+      key: "AIzaSyCADBpJr3M7RyQvzOumCdU-wjsgl0yHEFs",
       q: this.state.query,
       pageToken: this.state.nextPageToken,
       part: "snippet",
@@ -45,7 +47,7 @@ class Main extends React.Component {
       const { data } = await axios.get(URL, { params });
 
       data.items.map(async (item) => {
-        const URL_channel = `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${item.snippet.channelId}&key=AIzaSyCd3ZIu6NcAHyXeHb6TtYZUpGQFysuo71A`;
+        const URL_channel = `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${item.snippet.channelId}&key=AIzaSyCADBpJr3M7RyQvzOumCdU-wjsgl0yHEFs`;
 
         const channel = await axios.get(URL_channel);
         item.snippet.channelThumb = channel.data.items[0].snippet.thumbnails;
@@ -104,7 +106,28 @@ class Main extends React.Component {
     return (
       <div className="App">
         <hr></hr>
-
+        <div className="sidemenu-icon">
+          <div className="sidemenu-icon2">
+            <img src={home}></img>
+            <div>홈</div>
+          </div>
+          <div className="sidemenu-icon2">
+            <img src={search}></img>
+            <div>탐색</div>
+          </div>
+          <div className="sidemenu-icon2">
+            <img src={search}></img>
+            <div>탐색</div>
+          </div>
+          <div className="sidemenu-icon2">
+            <img src={search}></img>
+            <div>탐색</div>
+          </div>
+          <div className="sidemenu-icon2">
+            <img src={search}></img>
+            <div>탐색</div>
+          </div>
+        </div>
         <main>
           <div className="c3">
             {
