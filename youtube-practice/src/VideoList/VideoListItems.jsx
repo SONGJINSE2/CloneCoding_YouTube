@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 const VideoListItems = (props) => {
   const navigate = useNavigate();
-
   const videos = props.videoDatas.map((video) => {
     console.log("바보", video);
     return (
@@ -24,7 +23,7 @@ const VideoListItems = (props) => {
           <div className="Video-list-text-box">
             <img
               className="channelImg"
-              src={video.snippet.channelThumb.high.url}
+              // src={video.snippet.channelThumb.high.url}
             />
             <figcaption>{video.snippet.title},</figcaption>
           </div>

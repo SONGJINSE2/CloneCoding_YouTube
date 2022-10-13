@@ -20,10 +20,7 @@
   cursor: pointer;
 }
 
-.c2 .thumbnailImg {
-  width: 320px;
-  height: 180px;
-}
+
 
 .content-button {
   display: flex;

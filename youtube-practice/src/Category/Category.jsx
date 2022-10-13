@@ -17,6 +17,7 @@ const Category = (props) => {
         <button>뉴스</button>
         <button>연예인</button>
       </div>
+      <hr />
     </section>
   );
 };

@@ -13,6 +13,9 @@ import { debounce } from "loadsh";
 import VideoListItems from "./VideoList/VideoListItems";
 import home from "./Nav/images/home.png";
 import search from "./Nav/images/search.png";
+import shorts from "./Nav/images/shorts.png";
+import gudok from "./Nav/images/gudok.png";
+import save from "./Nav/images/save.png";
 class Main extends React.Component {
   constructor(props) {
     // ** 클래스형 컴포넌트를 사용하기 위해서는 constructor(props)-> super(props)를 작성해줘야한다.
@@ -36,18 +39,21 @@ class Main extends React.Component {
 
     const params = {
       //** params이라는 객체 안에 key,q,pageToken,part라는 키:값을 할당
-      key: "AIzaSyCADBpJr3M7RyQvzOumCdU-wjsgl0yHEFs",
+      key: "AIzaSyCd3ZIu6NcAHyXeHb6TtYZUpGQFysuo71A",
       q: this.state.query,
       pageToken: this.state.nextPageToken,
       part: "snippet",
+      maxResults: 1,
+      regionCode: "KR",
     };
     console.log("params : ", params);
+
     // async 는 await(=promise)를 묶기 위해 사용하는 메서드이고, try는 시도하는 메서드, catch는 에러가 던져졌을 때 어떻게 할지 동작하는 메서드.
     try {
       const { data } = await axios.get(URL, { params });
 
       data.items.map(async (item) => {
-        const URL_channel = `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${item.snippet.channelId}&key=AIzaSyCADBpJr3M7RyQvzOumCdU-wjsgl0yHEFs`;
+        const URL_channel = `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${item.snippet.channelId}&regionCode=KR&key=AIzaSyCd3ZIu6NcAHyXeHb6TtYZUpGQFysuo71A`;
 
         const channel = await axios.get(URL_channel);
         item.snippet.channelThumb = channel.data.items[0].snippet.thumbnails;
@@ -101,8 +107,6 @@ class Main extends React.Component {
   }
 
   render() {
-    const { videoId } = this.state;
-
     return (
       <div className="App">
         <hr></hr>
@@ -116,19 +120,20 @@ class Main extends React.Component {
             <div>탐색</div>
           </div>
           <div className="sidemenu-icon2">
-            <img src={search}></img>
-            <div>탐색</div>
+            <img src={shorts}></img>
+            <div>Shorts</div>
           </div>
           <div className="sidemenu-icon2">
-            <img src={search}></img>
-            <div>탐색</div>
+            <img src={gudok}></img>
+            <div>구독</div>
           </div>
           <div className="sidemenu-icon2">
-            <img src={search}></img>
-            <div>탐색</div>
+            <img src={save}></img>
+            <div>보관함</div>
           </div>
         </div>
         <main>
+          <hr></hr>
           <div className="c3">
             {
               // <InfiniteScroll

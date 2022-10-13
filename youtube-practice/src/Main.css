@@ -12,6 +12,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .sidemenu-icon2 img {
@@ -25,4 +26,9 @@
   height: 30px;
   text-align: center;
   margin: 5px 0px 0px 0px;
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
 }
