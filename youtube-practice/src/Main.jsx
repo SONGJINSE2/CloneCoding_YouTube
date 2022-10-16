@@ -39,28 +39,31 @@ class Main extends React.Component {
 
     const params = {
       //** params이라는 객체 안에 key,q,pageToken,part라는 키:값을 할당
-      key: "AIzaSyCd3ZIu6NcAHyXeHb6TtYZUpGQFysuo71A",
+      key: "AIzaSyDC9_BVMCwJBw0k0weGf51Y4S39G-r05iI",
       q: this.state.query,
       pageToken: this.state.nextPageToken,
       part: "snippet",
-      maxResults: 1,
+      chart: "mostPopular",
+      maxResults: 20,
       regionCode: "KR",
     };
-    console.log("params : ", params);
 
     // async 는 await(=promise)를 묶기 위해 사용하는 메서드이고, try는 시도하는 메서드, catch는 에러가 던져졌을 때 어떻게 할지 동작하는 메서드.
     try {
+      // axios.get(URL, { params }).then((result) => {
+      //   const { data } = result;
+      //   data.items.map((item) => {});
+      // });
       const { data } = await axios.get(URL, { params });
 
-      data.items.map(async (item) => {
-        const URL_channel = `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${item.snippet.channelId}&regionCode=KR&key=AIzaSyCd3ZIu6NcAHyXeHb6TtYZUpGQFysuo71A`;
+      for (const item of data.items) {
+        const URL_channel = `https://www.googleapis.com/youtube/v3/channels?part=snippet&chart=mostPopular&id=${item.snippet.channelId}&regionCode=KR&key=AIzaSyDC9_BVMCwJBw0k0weGf51Y4S39G-r05iI`;
 
         const channel = await axios.get(URL_channel);
         item.snippet.channelThumb = channel.data.items[0].snippet.thumbnails;
-        return item;
-      });
+      }
 
-      console.log("data : ", data);
+      console.log("data2 : ", data);
 
       // const channel = await axios.get(URL_channel);
       // URL에 params가 포함된 형태로( ? ) GET 방식 통신을 진행.
@@ -79,7 +82,7 @@ class Main extends React.Component {
           query: this.state.query,
           nextPageToken: data.nextPageToken, // state.nextPageToken의 내용을 위에서 선언한 {data} 객체 안에 nextPageToken의 내용으로 바꾼다.
         },
-        () => console.log(data) // console.log(data)라고 쓰지않고 화살표 함수를 쓴 이유는? => setState값을 바뀐상태에서 또 바꾸기위해서 this.setState({},()=>{})로 사용할 수 있다.
+        () => console.log("state : ", data) // console.log(data)라고 쓰지않고 화살표 함수를 쓴 이유는? => setState값을 바뀐상태에서 또 바꾸기위해서 this.setState({},()=>{})로 사용할 수 있다.
       );
     } catch (error) {
       //** catch에서 받아오는 error 객체를 통해 응답상태코드와 응답헤더정보를 파악할 수 있다.
@@ -161,6 +164,3 @@ export default Main;
 // ** debounce : 연이어 호출되는 함수들 중 마지막 함수(또는 제일 처음)만 호출하도록 하는 것
 // ** onSearchVideo 는 자료가 많이 없는데 자주 쓰는 표현인지? 입력받고 실시간으로 데이터를 불러오는 명령어가 맞는지?
 // ** videoId가 참이면 <VideoPlayer videoId={videoId}></VideoPlayer> 실행? 거짓이면 <VideoList {...this.state} onSetVideoId={this.setVideoId} />????
-// ** 굳이 위의 식을 render 안 에 쓸 필요가 있는건지?
-
-// ** jsx와 js파일의 차이점은 무엇인지?

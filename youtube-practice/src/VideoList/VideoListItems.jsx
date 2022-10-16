@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { v4 } from "uuid";
 import "./VideoList.css";
 import { useNavigate } from "react-router-dom";
 
 const VideoListItems = (props) => {
   const navigate = useNavigate();
+  const parser = new DOMParser();
   const videos = props.videoDatas.map((video) => {
-    console.log("바보", video);
+    const title = parser.parseFromString(video.snippet.title, "text/html");
     return (
       <li
         className="c2"
@@ -23,9 +24,9 @@ const VideoListItems = (props) => {
           <div className="Video-list-text-box">
             <img
               className="channelImg"
-              // src={video.snippet.channelThumb.high.url}
+              src={video.snippet.channelThumb.high.url}
             />
-            <figcaption>{video.snippet.title},</figcaption>
+            {title.body.innerHTML}
           </div>
         </figure>
       </li>
